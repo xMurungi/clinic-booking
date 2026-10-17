@@ -1,0 +1,4 @@
+DROP TABLE IF EXISTS appointments;
+DROP TABLE IF EXISTS patients;
+DROP TABLE IF EXISTS working_hours;
+DROP TABLE IF EXISTS doctors;
