@@ -220,7 +220,7 @@ done | sort | uniq -c
 - I also used it to read error messages I didn't recognise.
 
 **2. A suggestion that improved my work**
-When I described the booking problem, the AI pointed out that checking whether a slot is free and then inserting is not safe when two requests arrive together. It suggested a unique partial index on `(doctor_id, start_time) WHERE status = 'booked'`, so the database settles the race and the code just turns the failure into a `409`. I tested it by sending 10 requests at once and got one `201` and nine `409`s. [Add your own prompt wording here.]
+When I described the booking problem, the AI pointed out that checking whether a slot is free and then inserting is not safe when two requests arrive together. It suggested a unique partial index on `(doctor_id, start_time) WHERE status = 'booked'`, so the database settles the race and the code just turns the failure into a `409`. I tested it by sending 10 requests at once and got one `201` and nine `409`s.
 
 **3. Where the AI was wrong or incomplete, and how I caught it**
 - It told me my booking IDs were skipping because of failed inserts. I looked at the actual table, which only had one row, so the real reason my reschedule returned `404` was that the appointment I was using didn't exist. I only found that by querying the database.
