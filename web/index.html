@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinic booking demo</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <h1>Clinic booking</h1>
+  <p class="muted">A small front end for the booking API. All times are Nairobi time.</p>
+
+  <section>
+    <h2>Free slots</h2>
+    <div class="row">
+      <label>Doctor <select id="doctor"></select></label>
+      <label>Date <input type="date" id="date"></label>
+    </div>
+    <div id="slots" class="slots"></div>
+  </section>
+
+  <section>
+    <h2>Book</h2>
+    <div class="row">
+      <label>Patient <select id="patient"></select></label>
+      <button id="book" class="primary">Book selected slot</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Upcoming appointments</h2>
+    <div id="appts"></div>
+  </section>
+
+  <p id="msg" role="status"></p>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
