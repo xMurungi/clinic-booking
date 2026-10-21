@@ -2,7 +2,8 @@
 
 A small REST API for booking appointments at a clinic with 5 doctors, written in Go with Postgres.
 
-- **Live URL:** https://<your-app>.onrender.com
+- **Live URL:** https://clinic-booking-8a1y.onrender.com/healthz 
+> You must add the api endpoints to the url above for it to work as intended
 - **Repo:** <https://github.com/xMurungi/clinic-booking>
 - **Deploys from:** the `main` branch (see CI/CD below)
 
@@ -11,7 +12,7 @@ A small REST API for booking appointments at a clinic with 5 doctors, written in
 ## Try it
 
 ```bash
-BASE=https://<your-app>.onrender.com
+BASE= https://clinic-booking-8a1y.onrender.com
 
 curl $BASE/healthz
 curl "$BASE/doctors/1/availability?date=2026-10-26"
