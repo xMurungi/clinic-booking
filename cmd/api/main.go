@@ -17,6 +17,7 @@ import (
 	_ "github.com/golang-migrate/migrate/v4/database/pgx/v5"
 	"github.com/golang-migrate/migrate/v4/source/iofs"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/xMurungi/clinic-booking/web"
 	"github.com/xMurungi/clinic-booking/internal/booking"
 	"github.com/xMurungi/clinic-booking/internal/config"
 	"github.com/xMurungi/clinic-booking/internal/handlers"
@@ -87,6 +88,11 @@ func run() error {
 	mux.HandleFunc("PATCH /appointments/{id}/cancel", api.Cancel)
 	mux.HandleFunc("PATCH /appointments/{id}/reschedule", api.Reschedule)
 	mux.HandleFunc("GET /patients/{id}/appointments", api.PatientAppointments)
+
+	ui := http.FileServerFS(web.FS)
+	mux.Handle("GET /{$}", ui)
+	mux.Handle("GET /style.css", ui)
+	mux.Handle("GET /app.js", ui)
 
 	srv := &http.Server{
 		Addr:              cfg.HTTPAddr,
