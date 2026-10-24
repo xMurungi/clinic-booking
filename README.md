@@ -2,7 +2,7 @@
 
 A small REST API for booking appointments at a clinic with 5 doctors, written in Go with Postgres.
 
-- **Live URL:** https://clinic-booking-8a1y.onrender.com/healthz 
+- **Live URL:** https://clinic-booking-8a1y.onrender.com/healthz (This comes with a demo ui to interact with the backend)
 > You must add the api endpoints to the url above for it to work as intended
 - **Repo:** <https://github.com/xMurungi/clinic-booking>
 - **Deploys from:** the `main` branch (see CI/CD below)
